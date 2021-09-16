@@ -1,6 +1,6 @@
 {
   "name": "webpack5-babel",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,7 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "@babel/core": "^7.15.5",
     "@babel/polyfill": "^7.12.1",

@@ -1,8 +1,11 @@
 const path = require("path");
+const fs = require("fs");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const isExistIndexHtml = fs.statSync("index.html").isFile;
+console.log(path.resolve(__dirname, "index.html"));
 module.exports = {
   entry: "./src/index",
   output: {
@@ -115,7 +118,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: isExistIndexHtml
+        ? "index.html"
+        : path.resolve(__dirname, "index.html"),
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:8].css",
