@@ -28,6 +28,13 @@ npm i webpack5-babel -D
 必须在根目录增加index.html文件
 ```
 
+> 配置默认
+
+```code
+默认entry是src/index文件，支持.js,.jsx,.ts,.tsx
+默认output是dist
+```
+
 ## package.json 添加执行命令
 
 ```code
