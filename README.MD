@@ -22,6 +22,12 @@ npm i webpack5-babel -D
     module.exports = prodConfig;
 ```
 
+> index.html
+
+```code
+必须在根目录增加index.html文件
+```
+
 ## package.json 添加执行命令
 
 ```code
