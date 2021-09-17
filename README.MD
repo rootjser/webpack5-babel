@@ -1,12 +1,12 @@
-webpack5 配置文件 babel、sass、less、react、ts
+webpack5 配置文件 babel、sass、less、react、ts、eslint
 
-## 安装
+## （必须）安装
 
 ```code
 npm i webpack5-babel -D
 ```
 
-## 根目录添加 webpack 配置文件
+## （必须）根目录添加 webpack 配置文件
 
 > webpack.dev.js
 
@@ -22,20 +22,7 @@ npm i webpack5-babel -D
     module.exports = prodConfig;
 ```
 
-> index.html
-
-```code
-必须在根目录增加index.html文件
-```
-
-> 配置默认
-
-```code
-默认entry是src/index文件，支持.js,.jsx,.ts,.tsx
-默认output是dist
-```
-
-## package.json 调整
+## （必须）package.json 调整
 
 > scripts 增加 dev 和 build 命令
 
@@ -44,15 +31,22 @@ npm i webpack5-babel -D
     "build": "webpack --config webpack.prod.js"
 ```
 
-## 可覆盖文件
+## （可选）可覆盖文件
 
-> index.html
+> entry 和 output 配置默认
+
+```code
+默认entry是src/index文件，支持.js,.jsx,.ts,.tsx
+默认output是dist
+```
+
+> index.html 配置默认
 
 引入包后，如果根目录有 index.html 文件会优先使用，否则调用包默认的 index.html 文件
 1、默认 index.html 文件没有 title
 2、有 div，id=root
 
-> .browserslistrc
+> .browserslistrc 配置默认
 
 引入包后，如果根目录有 .browserslistrc 文件会优先使用，否则调用包默认的 .browserslistrc 文件
 
@@ -62,7 +56,7 @@ last 2 versions
 IE 10
 ```
 
-> .eslintrc.js
+> .eslintrc.js 配置默认
 
 引入包后，如果根目录有 .eslintrc.(js|json|yml) 文件会优先使用，否则调用包默认的 eslintrc.js 文件
 
