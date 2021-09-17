@@ -35,9 +35,56 @@ npm i webpack5-babel -D
 默认output是dist
 ```
 
-## package.json 添加执行命令
+## package.json 调整
+
+> scripts 增加 dev 和 build 命令
 
 ```code
     "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
+```
+
+## 可覆盖文件
+
+> index.html
+
+引入包后，如果根目录有 index.html 文件会优先使用，否则调用包默认的 index.html 文件
+1、默认 index.html 文件没有 title
+2、有 div，id=root
+
+> .browserslistrc
+
+引入包后，如果根目录有 .browserslistrc 文件会优先使用，否则调用包默认的 .browserslistrc 文件
+
+```code
+last 2 versions
+> 0.5%
+IE 10
+```
+
+> .eslintrc.js
+
+引入包后，如果根目录有 .eslintrc.(js|json|yml) 文件会优先使用，否则调用包默认的 eslintrc.js 文件
+
+```code
+module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  env: {
+    browser: true,
+  },
+  rules: {
+    "no-useless-escape": "warn",
+    "no-irregular-whitespace": "warn",
+    "no-control-regex": "warn",
+    "no-prototype-builtins": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "no-var": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/no-this-alias": "warn",
+  },
+};
 ```
