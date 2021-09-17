@@ -41,6 +41,7 @@ const getRelativePathWithExtension = (filePath, fileName, extensions = []) => {
 const getRelativeFile = (fileName, extensions = []) => {
   const localPath = path.resolve(__dirname, fileName);
   const runtimePath = path.resolve(process.cwd(), fileName);
+
   try {
     require(runtimePath);
     return getRelativePathWithExtension(runtimePath, fileName, extensions);
@@ -51,7 +52,10 @@ const getRelativeFile = (fileName, extensions = []) => {
   }
   return getRelativePathWithExtension(
     localPath,
-    localPath.replace(runtimePath, "") + fileName,
+    "." +
+      path.resolve(__dirname).replace(path.resolve(process.cwd()), "") +
+      "\\" +
+      fileName,
     extensions
   );
 };

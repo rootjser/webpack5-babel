@@ -31,13 +31,6 @@ npm i webpack5-babel -D
     "build": "webpack --config webpack.prod.js"
 ```
 
-## 注意事项
-
-> git commit 规范
-
-正确格式 git commit -m "feat: 初始化项目"
-标签有"feat", "fix", "docs", "style", "refactor", "test", "chore", "revert"
-
 ## （可选）可覆盖文件
 
 > entry 和 output 配置默认
