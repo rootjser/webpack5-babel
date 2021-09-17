@@ -55,30 +55,3 @@ last 2 versions
 > 0.5%
 IE 10
 ```
-
-> .eslintrc.js 配置默认
-
-引入包后，如果根目录有 .eslintrc.(js|json|yml) 文件会优先使用，否则调用包默认的 eslintrc.js 文件
-
-```code
-module.exports = {
-  root: true,
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  env: {
-    browser: true,
-  },
-  rules: {
-    "no-useless-escape": "warn",
-    "no-irregular-whitespace": "warn",
-    "no-control-regex": "warn",
-    "no-prototype-builtins": "warn",
-    "@typescript-eslint/no-inferrable-types": "warn",
-    "@typescript-eslint/no-var-requires": "warn",
-    "no-var": "warn",
-    "@typescript-eslint/ban-types": "warn",
-    "@typescript-eslint/no-this-alias": "warn",
-  },
-};
-```

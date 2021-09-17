@@ -157,12 +157,12 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": {},
     }),
-    new ESLintPlugin({
-      overrideConfigFile: getAbsoluteFile(".eslintrc", [
-        ".js",
-        ".json",
-        ".yml",
-      ]),
-    }),
+    // new ESLintPlugin({
+    //   overrideConfigFile: getAbsoluteFile(".eslintrc", [
+    //     ".js",
+    //     ".json",
+    //     ".yml",
+    //   ]),
+    // }),
   ],
 };

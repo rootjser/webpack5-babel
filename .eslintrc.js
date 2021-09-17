@@ -1,11 +1,20 @@
 module.exports = {
-  root: true,
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  extends: ["airbnb", "plugin:import/typescript"],
   env: {
     browser: true,
   },
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint", "react-hooks"],
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        "@typescript-eslint/no-unused-vars": [2, { args: "none" }],
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": 2,
+      },
+    },
+  ],
   rules: {
     "no-useless-escape": "warn",
     "no-irregular-whitespace": "warn",
